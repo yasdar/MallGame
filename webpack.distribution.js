@@ -4,11 +4,12 @@ const path = require('path');
 const CopyPlugin = require('copy-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
  
+var PATHS = {dist: path.resolve(__dirname, 'dist')}
+
 module.exports = {
     entry: {
- 
         // this is our entry point, the main JavaScript file
-        app: './src/main.ts',
+        app: './src/Boot.ts',
     },
     output: {
  
@@ -21,12 +22,9 @@ module.exports = {
  
     // we are in production mode
     mode: 'production',
-    externals: {
-        phaser: {
-          root: "phaser",
-          commonjs2: "phaser",
-        },
-    },
+    /*externals: {
+     "pixi": path.resolve(__dirname, "./node_modules/pixi.js/dist/pixi.min.js")
+    },*/
     plugins: [
  
         // here we clean the destination folder
@@ -45,17 +43,13 @@ module.exports = {
                     to:"index.html"//rename it
                 },
                 {
-                    // every file inside src/assets folder
+                    // all files inside src/assets folder
                     from: 'assets/*/*',
                     context: 'src/'
                 },
+               // { from: 'node_modules/pixi.js/dist/pixi.min.js', to: PATHS.dist },
                 {
-                    // every file inside src/assets folder
-                    from: '../node_modules/phaser/dist/phaser.min.js',
-                    context: 'src/'
-                },
-                {
-                    // every file inside src/assets folder
+                    // all files inside css
                     from: 'css/*',
                     context: 'src/'
                 },

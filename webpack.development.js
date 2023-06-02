@@ -2,9 +2,8 @@ const path = require('path');
  
 module.exports = {
     entry: {
- 
         // this is our entry point, the main JavaScript file
-        app: './src/main.ts',
+        app: './src/Boot.ts',
     },
     output: {
  
