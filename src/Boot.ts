@@ -12,9 +12,9 @@ class Boot extends Phaser.Scene {
     }
     preload(): void {
         this.load.image('splash','./assets/images/splash.png');
-        this.load.image('slide1','./assets/images/slide1s.png');
-        this.load.image('slide2','./assets/images/slide2s.png');
-        this.load.image('slide3','./assets/images/slide3s.png');
+        this.load.image('slide1','./assets/images/1p.png');
+        this.load.image('slide2','./assets/images/2p.png');
+        this.load.image('slide3','./assets/images/3p.png');
 
     }
     create(): void {
